@@ -1,0 +1,33 @@
+{
+  "name": "gyobango2",
+  "displayName": "Gyobango2",
+  "description": "Display Line Number / Gyo-bango",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/hortense667/gyobango2.git"
+  },
+  "activationEvents": [
+    "onCommand:gyobango2.GyoBango2"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gyobango2.GyoBango2",
+        "title": "Gyobango2: Gyo Bango2"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "typescript": "^4.9.3"
+  }
+}
