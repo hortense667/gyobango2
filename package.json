@@ -1,15 +1,23 @@
 {
   "name": "gyobango2",
   "displayName": "Gyobango2",
-  "description": "Display Line Number / Gyo-bango",
-  "version": "0.1.0",
+  "description": "Display Visual Line Number(wrapped line number) / Gyo-bango",
+  "version": "0.1.9",
+  "icon": "icon.png",
   "engines": {
-    "vscode": "^1.80.0"
+    "vscode": "^1.96.2"
   },
+  "publisher": "SatoshiEndo",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/hortense667/gyobango2.git"
+    "type": "git",
+    "url": "https://github.com/hortense667/gyobango2.git"
   },
+  "keywords": [
+    "gyobango",
+    "line number",
+    "line number display",
+    "gyobango2"
+  ],
   "activationEvents": [
     "onCommand:gyobango2.GyoBango2"
   ],
@@ -27,7 +35,12 @@
     "compile": "tsc -p ./"
   },
   "devDependencies": {
-    "@types/vscode": "^1.80.0",
+    "@types/estree": "^1.0.7",
+    "@types/istanbul-lib-coverage": "^2.0.6",
+    "@types/json-schema": "^7.0.15",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.14.1",
+    "@types/vscode": "^1.96.2",
     "typescript": "^4.9.3"
   }
 }
