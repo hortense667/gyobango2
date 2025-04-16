@@ -1,20 +1,17 @@
 # Gyobango2
 
-**Gyobango2** is a Visual Studio Code extension that automatically processes the currently open file based on cursor movement and user inactivity. Unlike standard editor automation tools, Gyobango2 actively tracks user interactions and performs structured operations when the user pauses for a specified duration.
+**Gyobango2** is a Visual Studio Code extension that allows you to know the visual line number (wrapped line number)  from the top of a file. Line numbers are not displayed to the left of each line. Instead, it opens a new file to display line numbers. Please run it again if the screen scrolls or the display width of the editor window is changed.
 
 ## Features
 
-- **Monitors User Activity:**  
-  Detects when a user stops interacting with the editor for 5 seconds and then triggers automated processing.
-  
-- **Automated Cursor Tracking:**  
-  Moves the cursor upwards visually (wrapped line by wrapped line) until it reaches the top, counting the number of movements.
-  
+- **Calculating the visible line number:**  
+  Visually moves the cursor upwards (for each wrapped line) and counts the number of times the cursor moves until it reaches the top.
+
 - **Auto-Generated Number File:**  
-  If a number-sequenced file already exists, it is reused and extended. Otherwise, a new file is created in a secondary editor pane.
+  If a numbered file already exists, reuse it. If not, create a new one in a separate editor pane. Manually change the display width of the numbered file if necessary.
   
 - **Dynamic Number Generation:**  
-  Writes numbers starting from `00001` up to `count + 100` into the designated file, ensuring continuity without gaps.
+  Write numbers from `00001` to `current line + 100` consecutively, without gaps, to a numbered sequential file.
   
 - **Automatic Window Management:**  
   Ensures that only the necessary editor windows remain open by closing the original editor pane when a secondary window is opened.
@@ -27,16 +24,17 @@
 ## Usage
 
 1. Open a text file in VS Code (or CURSOR).
-2. Activate the extension via `Ctrl+Shift+P` and run **Gyobango2: Gyo Bango2**.
-3. The extension begins monitoring for user inactivity.
-4. After 5 seconds of no input, the automation process starts.
-5. The cursor movement is counted, and the number-sequenced file is either created or updated accordingly.
-6. The original editor pane is closed to prevent duplicate windows.
+2. Select Edit shortcut keys from Ctrl+Shift+P and assign "Gyobango2: Gyo Bango2" to any shortcut key.
+3. Press the shortcut key to run it.
+4. Cursor movements are counted and a number sequence file is created or updated accordingly.
+5. Please run it again if you change the display width of the window you are editing. The first time you run it, the display width of the screen should have changed because the numbered file was opened. In that case, run it again.
+6. If you scroll the screen on the file you are editing, there will be a difference in the line numbers, so please run it again.
+7. Please use this function without displaying "Breadcrumbs", i.e., the navigation hierarchical links at the top of each editing window. If it is enabled, one extra line number will be displayed. We recommend that you turn off "Breadcrumbs" by pressing "Ctrl-,".
 
 ## Commands
 
 - **Gyobango2: Gyo Bango2**  
-  Starts or stops the monitoring process for automatic cursor tracking and number file generation.
+  Run the above process only once.
 
 ## Extension Settings
 
@@ -49,6 +47,10 @@ _No extension-specific settings are provided at this time._
 - If an existing number file is manually edited, gaps may occur in numbering.
 
 ## Release Notes
+
+### 0.1.1
+
+- The README file was incorrect, so we fixed it.
 
 ### 0.0.1
 
